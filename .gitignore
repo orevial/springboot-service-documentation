@@ -1,12 +1,15 @@
-*.class
+target
+.classpath
+.project
+.settings
+bin
 
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
+*.iml
+.idea
 
-# Package Files #
-*.jar
-*.war
-*.ear
+build-info.properties
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
+src/docs/asciidoc/changelog.adoc
+src/docs/asciidoc/apidoc/overview.adoc
+src/docs/asciidoc/apidoc/paths.adoc
+src/docs/asciidoc/apidoc/definitions.adoc

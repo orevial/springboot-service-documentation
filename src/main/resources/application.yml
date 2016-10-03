@@ -1,0 +1,7 @@
+spring:
+  application.name: springboot-service-documentation
+
+springboot-service-documentation:
+  customStringParam1: Value for param 1
+  isCustomParam2: false
+  customIntParam3: 100

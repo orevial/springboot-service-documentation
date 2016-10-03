@@ -1,0 +1,6 @@
+= {project-name}
+
+* link:javadoc/index.html[Javadoc]
+* link:apidoc/index.html[API Documentation]
+* link:changelog.html[Changelog]
+
