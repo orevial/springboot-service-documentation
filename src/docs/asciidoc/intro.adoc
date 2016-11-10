@@ -1,6 +1,69 @@
 = {project-name}
 
-* link:javadoc/index.html[Javadoc]
-* link:apidoc/index.html[API Documentation]
-* link:changelog.html[Changelog]
+== Specific documentations
 
+* link:javadoc/[Javadoc]
+* link:apidoc/index.html[API Documentation]
+* link:changelog[Changelog]
+
+== What's in there ?
+
+=== Different types of docs
+
+There are many ways to document an application, and many can be combined together to form a global and complete
+documentation. Here are a few examples of the different types of documentations available when you want to get closer
+ to living documentation :
+
+==== README
+
+The level 0 of documentation. Usually contains infos about how to build and test the application on a local/dev
+environment.
+
+===== Manual app documentation
+
+A complete guide on how to use the application.
+
+===== Release notes
+
+The changes introduced by each release of the application. Can be handwritten or automatically generated based on Git
+ commits and tags or Jira Tickets...
+
+===== Javadoc
+
+The javadoc aims to expose your code documentation to anyone using your application's code (e.g. if your application
+is used as a dependency). The generation of javadoc should be automatic
+
+==== REST API
+
+When an application contains REST controllers that are publicly exposed, you often want to provide REST API
+documentation to your clients so that they know how to use your API (which methods they can call, using which
+parameters, in which format, etc.). This documentation is right next to the code and evolves with it.
+
+==== REST API Snippets
+
+Once you have generated basic REST API documentation (using tools such as Swagger), you might want to go further and
+give your clients actual examples of requests and responses they can send and expect to receive to/from your API
+methods. Rather than adding static examples to your manual documentation, the best is to provide automatic
+documentation based on your actual code. Frameworks such as Spring Restdocs are able to do that for us.
+
+=== Processes
+
+
+
+
+When using Solr Monitoring Agent, a JVM parameter is used (e.g. when the service is deployed externally through
+Ansible or Docker) :
+
+[source,java]
+----
+-Dhostname
+----
+
+This is the default parameter. However sometimes, when testing on your local environment, you might want to monitor
+another Solr instance because you might not test on a local Solr instance. To do that you can use the specific following
+parameter :
+
+[source,java]
+----
+-DmonitoredHostname
+----
