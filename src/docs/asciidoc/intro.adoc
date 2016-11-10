@@ -1,4 +1,6 @@
 = {project-name}
+:imagesdir: images
+:toclevels: 3
 
 == Specific documentations
 
@@ -12,32 +14,42 @@
 
 There are many ways to document an application, and many can be combined together to form a global and complete
 documentation. Here are a few examples of the different types of documentations available when you want to get closer
- to living documentation :
+ to living documentation.
 
 ==== README
 
 The level 0 of documentation. Usually contains infos about how to build and test the application on a local/dev
 environment.
 
-===== Manual app documentation
+image::doc_readme.png[README]
+
+==== Manual app documentation
 
 A complete guide on how to use the application.
 
-===== Release notes
+image::doc_manual_asciidoc.png[README]
+
+==== Release notes
 
 The changes introduced by each release of the application. Can be handwritten or automatically generated based on Git
  commits and tags or Jira Tickets...
 
-===== Javadoc
+image::doc_changelog.png[README]
+
+==== Javadoc
 
 The javadoc aims to expose your code documentation to anyone using your application's code (e.g. if your application
 is used as a dependency). The generation of javadoc should be automatic
+
+image::doc_javadoc.png[README]
 
 ==== REST API
 
 When an application contains REST controllers that are publicly exposed, you often want to provide REST API
 documentation to your clients so that they know how to use your API (which methods they can call, using which
 parameters, in which format, etc.). This documentation is right next to the code and evolves with it.
+
+image::doc_restapi.png[README]
 
 ==== REST API Snippets
 
@@ -46,24 +58,15 @@ give your clients actual examples of requests and responses they can send and ex
 methods. Rather than adding static examples to your manual documentation, the best is to provide automatic
 documentation based on your actual code. Frameworks such as Spring Restdocs are able to do that for us.
 
+image::doc_resstapi_snippets.png[README]
+
 === Processes
 
+Once we know how to add and/or generate each type of documentation, we need a few steps to gather all types of
+documentation in one place and exploit it. Here are a few example steps :
 
-
-
-When using Solr Monitoring Agent, a JVM parameter is used (e.g. when the service is deployed externally through
-Ansible or Docker) :
-
-[source,java]
-----
--Dhostname
-----
-
-This is the default parameter. However sometimes, when testing on your local environment, you might want to monitor
-another Solr instance because you might not test on a local Solr instance. To do that you can use the specific following
-parameter :
-
-[source,java]
-----
--DmonitoredHostname
-----
+1. *Generate HTML* from Asciidoc sources
+1. Gather all this HTML into a *single doc artifact* (e.g. a zip archive)
+1. *Publish* the doc artifact to a *remote repository* (e.g. on a Nexus/Artifactory)
+1. *Poll* the artifact *repository* (e.g. using a bash script, a Jenkins job, ...)
+1. *Publish* the doc artifacts to a *server* (e.g.)
