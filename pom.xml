@@ -86,7 +86,7 @@
             <plugin>
                 <groupId>com.github.danielflower.mavenplugins</groupId>
                 <artifactId>gitlog-maven-plugin</artifactId>
-                <version>1.13</version>
+                <version>1.13.3</version>
                 <configuration>
                     <outputDirectory>.</outputDirectory>
                     <reportTitle>${project.artifactId} changelog</reportTitle>
@@ -212,4 +212,15 @@
             </plugin>
         </plugins>
     </build>
+
+    <repositories>
+        <repository>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+            <id>jcenter-releases</id>
+            <name>jcenter</name>
+            <url>http://jcenter.bintray.com</url>
+        </repository>
+    </repositories>
 </project>
