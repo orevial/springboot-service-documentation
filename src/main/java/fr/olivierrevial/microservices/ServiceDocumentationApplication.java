@@ -1,18 +1,20 @@
 package fr.olivierrevial.microservices;
 
-import java.net.UnknownHostException;
-
+import fr.olivierrevial.microservices.settings.ServiceDocumentationSettings;
 import org.springframework.beans.BeansException;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.context.annotation.ComponentScan;
 
-import springfox.documentation.swagger2.annotations.EnableSwagger2;
+import java.net.UnknownHostException;
 
 /**
  * Springboot Service Documentation application.
  */
-@EnableSwagger2
 @SpringBootApplication
+@ComponentScan(basePackages = { "fr.olivierrevial.microservices" })
+@EnableConfigurationProperties({ ServiceDocumentationSettings.class})
 public class ServiceDocumentationApplication {
     /**
      * Main method, used to run the application.

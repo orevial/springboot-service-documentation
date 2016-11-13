@@ -53,26 +53,6 @@
             <version>3.5</version>
         </dependency>
 
-
-        <!-- Swagger & doc dependencies -->
-        <dependency>
-            <groupId>io.springfox</groupId>
-            <artifactId>springfox-swagger2</artifactId>
-            <version>2.5.0</version>
-        </dependency>
-        <dependency>
-            <groupId>io.github.swagger2markup</groupId>
-            <artifactId>swagger2markup</artifactId>
-            <version>1.0.1</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>io.springfox</groupId>
-            <artifactId>springfox-staticdocs</artifactId>
-            <version>2.5.0</version>
-            <scope>test</scope>
-        </dependency>
-
         <!-- Other test dependencies -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -204,7 +184,6 @@
                         <idseparator>-</idseparator>
                         <docinfo1>true</docinfo1>
                         <linkcss>true</linkcss>
-                        <snippets>${snippetsDirectory}</snippets>
                         <project-version>${project.version}</project-version>
                         <project-artifactid>${project.artifactId}</project-artifactid>
                         <project-name>${project.name}</project-name>

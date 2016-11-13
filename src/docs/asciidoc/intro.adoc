@@ -85,5 +85,4 @@ documentation in one place and exploit it. Here are a few example steps :
 == Specific documentations
 
 * link:javadoc/[Javadoc]
-* link:apidoc/index.html[API Documentation]
 * link:changelog[Changelog]
