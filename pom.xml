@@ -63,28 +63,6 @@
 
     <build>
         <plugins>
-            <!-- Lib for automatic changelog generation -->
-            <plugin>
-                <groupId>com.github.danielflower.mavenplugins</groupId>
-                <artifactId>gitlog-maven-plugin</artifactId>
-                <version>1.13.3</version>
-                <configuration>
-                    <outputDirectory>.</outputDirectory>
-                    <reportTitle>${project.artifactId} changelog</reportTitle>
-                    <generatePlainTextChangeLog>false</generatePlainTextChangeLog>
-                    <generateSimpleHTMLChangeLog>false</generateSimpleHTMLChangeLog>
-                    <generateMarkdownChangeLog>false</generateMarkdownChangeLog>
-                    <generatAsciidocChangeLog>true</generatAsciidocChangeLog>
-                    <asciidocChangeLogFilename>src/docs/asciidoc/changelog.adoc</asciidocChangeLogFilename>
-                    <generateHTMLTableOnlyChangeLog>false</generateHTMLTableOnlyChangeLog>
-                    <generateJSONChangeLog>false</generateJSONChangeLog>
-                    <dateFormat>dd-MM-yyyy - </dateFormat>
-                    <excludeCommiters>
-                        <commiter>Jenkins</commiter>
-                    </excludeCommiters>
-                </configuration>
-            </plugin>
-
             <!-- Libs for unit/integration test -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
