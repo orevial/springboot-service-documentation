@@ -1,24 +1,18 @@
 package fr.olivierrevial.microservices.documentation;
 
-import static org.springframework.restdocs.http.HttpDocumentation.httpRequest;
-import static org.springframework.restdocs.http.HttpDocumentation.httpResponse;
-import static org.springframework.restdocs.mockmvc.MockMvcRestDocumentation.documentationConfiguration;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
-import static org.springframework.test.web.servlet.setup.MockMvcBuilders.webAppContextSetup;
-
-import org.junit.Before;
-import org.junit.Rule;
-import org.junit.Test;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
-import org.springframework.restdocs.JUnitRestDocumentation;
-import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.web.context.WebApplicationContext;
-
 import fr.olivierrevial.microservices.AbstractTest;
 import fr.olivierrevial.microservices.Swagger2MarkupResultHandler;
 import io.github.robwin.swagger2markup.GroupBy;
+import org.junit.Before;
+import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
+import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.web.context.WebApplicationContext;
+
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.setup.MockMvcBuilders.webAppContextSetup;
 
 /**
  * A test class that generates REST API documentation, including :
@@ -36,17 +30,9 @@ public class DocumentationIT extends AbstractTest {
     @Autowired
     protected WebApplicationContext webApplicationContext;
 
-    @Rule
-    public JUnitRestDocumentation restDocumentation = new JUnitRestDocumentation(APIDOC_OUTPUT_FOLDER);
-
     @Before
     public void initMockMVC() {
-        this.mockMvc = webAppContextSetup(webApplicationContext)
-                .apply(documentationConfiguration(restDocumentation).snippets()
-                        .withDefaults(
-                                httpRequest(),
-                                httpResponse()))
-                .build();
+        this.mockMvc = webAppContextSetup(webApplicationContext).build();
     }
 
     @Test
