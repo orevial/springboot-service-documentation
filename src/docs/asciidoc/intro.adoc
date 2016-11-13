@@ -2,11 +2,22 @@
 :imagesdir: images
 :toclevels: 3
 
-== Specific documentations
+== Context
 
-* link:javadoc/[Javadoc]
-* link:apidoc/index.html[API Documentation]
-* link:changelog[Changelog]
+=== Before
+
+* Manual : README + Wiki
+* Generated : Basic Swagger doc, accessible via the service itself (e.g. link:localhost:89789/api-docs[])
+
+=== Problems
+
+CAUTION: The wiki is not linked to the code and therefore is very hard to maintain updated
+
+CAUTION: Each service API documentation is accessible through its own endpoint, behind a gateway, which is cumbersome to access
+
+CAUTION: Some API calls are still very hard to make because we do not have example of JSON inputs
+
+TIP: How to have a documentation globally accessible and close to the code and make the API very easy to use ?
 
 == What's in there ?
 
@@ -70,3 +81,9 @@ documentation in one place and exploit it. Here are a few example steps :
 1. *Publish* the doc artifact to a *remote repository* (e.g. on a Nexus/Artifactory)
 1. *Poll* the artifact *repository* (e.g. using a bash script, a Jenkins job, ...)
 1. *Publish* the doc artifacts to a *server* (e.g.)
+
+== Specific documentations
+
+* link:javadoc/[Javadoc]
+* link:apidoc/index.html[API Documentation]
+* link:changelog[Changelog]
