@@ -82,6 +82,14 @@ documentation in one place and exploit it. Here are a few example steps :
 1. *Poll* the artifact *repository* (e.g. using a bash script, a Jenkins job, ...)
 1. *Publish* the doc artifacts to a *server* (e.g.)
 
+==== Build and deploy doc artifact
+
+image::process_build.png[]
+
+==== Expose documentation
+
+image::process_deploy_doc.png[]
+
 == Specific documentations
 
 * link:javadoc/[Javadoc]
