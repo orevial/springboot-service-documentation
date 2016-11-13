@@ -107,26 +107,6 @@
 
             <!-- Javadoc generation plugin -->
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-javadoc-plugin</artifactId>
-                <version>2.10.4</version>
-                <configuration>
-                    <reportOutputDirectory>${project.build.directory}</reportOutputDirectory>
-                    <destDir>javadoc</destDir>
-                </configuration>
-                <executions>
-                    <execution>
-                        <id>javadoc-to-html</id>
-                        <phase>generate-resources</phase>
-                        <goals>
-                            <goal>javadoc</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-
-            <!-- Doc assembly generation plugin -->
-            <plugin>
                 <artifactId>maven-assembly-plugin</artifactId>
                 <version>2.6</version>
                 <configuration>
