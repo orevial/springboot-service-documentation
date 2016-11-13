@@ -1,0 +1,6 @@
+{
+  "searchWord": "test",
+  "categories": ["category1", "category2", "category3"],
+  "facets": ["price", "color", "format"],
+  "nbResults": 3
+}

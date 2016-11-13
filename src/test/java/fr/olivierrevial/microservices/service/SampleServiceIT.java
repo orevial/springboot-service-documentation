@@ -1,10 +1,14 @@
 package fr.olivierrevial.microservices.service;
 
-import static org.assertj.core.api.Assertions.assertThat;
-
 import fr.olivierrevial.microservices.AbstractTest;
+import fr.olivierrevial.microservices.model.SearchRequest;
+import fr.olivierrevial.microservices.model.SearchResult;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+
+import java.util.Arrays;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 /**
  * Test class for SampleService.
@@ -22,7 +26,15 @@ public class SampleServiceIT extends AbstractTest {
 
     @Test
     public void getCustomBooleanParamValue() {
-        assertThat(sampleService.getCustomBooleanParamValue()).isFalse();
+        SearchRequest searchRequest = new SearchRequest();
+        searchRequest.setNbResults(10);
+        searchRequest.setCategories(Arrays.asList("category1", "category2", "category3"));
+        searchRequest.setFacets(Arrays.asList("price", "color", "format"));
+        searchRequest.setSearchWord("test");
+
+        SearchResult searchResult = sampleService.searchProducts(searchRequest);
+        assertThat(searchResult.getNbResults()).isEqualTo(10);
+        assertThat(searchResult.getProductsFound()).hasSize(10);
     }
 
 }

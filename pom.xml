@@ -47,6 +47,14 @@
             <artifactId>spring-boot-starter-undertow</artifactId>
         </dependency>
 
+        <!-- Commons lang -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.5</version>
+        </dependency>
+
+
         <!-- Swagger & doc dependencies -->
         <dependency>
             <groupId>io.springfox</groupId>
